@@ -1,0 +1,15 @@
+subscribers:
+  - oracleAQ:
+      host: ${ORACLE_HOST}
+      port: ${ORACLE_PORT}
+      sid: ${ORACLE_SID}
+      username: ${AQ_USERNAME}
+      password: ${AQ_PASSWORD}
+      queueOwner: ${AQ_QUEUEOWNER}
+      queueName: ${AQ_QUEUENAME}
+    publishers: [pubsub]
+publishers:
+  - pubsub:
+      projectID: ${GOOGLE_PROJECT_ID}
+      topic: ${GOOGLE_PUBLISHER_PUBSUB_TOPIC}
+    name: pubsub
